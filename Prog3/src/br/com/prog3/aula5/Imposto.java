@@ -1,0 +1,14 @@
+package br.com.prog3.aula5;
+
+public class Imposto {
+    public static Double calcularImposto(Double valor, Taxa tipo){
+        switch(tipo){
+            case IPTU: return valor*Taxa.IPTU.getPercentual();
+            case IPVA: return valor*Taxa.IPVA.getPercentual();
+            case ITBI: return valor*Taxa.ITBI.getPercentual();
+            case ISSQN: return valor*Taxa.ISSQN.getPercentual();
+            default:
+                return 0.0;
+        }
+    }
+}

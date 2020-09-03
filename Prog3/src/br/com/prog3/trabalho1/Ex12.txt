@@ -1,0 +1,1 @@
+Porque na 11 se usa Set, e Set não aceita repetições de valores.
