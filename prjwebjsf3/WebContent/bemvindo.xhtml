@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:tp="http://java.sun.com/jsf/composite/tutorialspoint">
+<h:head>
+	<title>Atividade 7 da aula 12</title>
+</h:head>
+<h:body>
+	<h2>Exemplo de uso de Ajax</h2>
+	<h:form>
+		<h:outputText value="Digite seu nome: " />
+		<h:inputText id="inputNome" value="#{usuario.nome}"></h:inputText>
+		<h:commandButton value="Enviar">
+			<f:ajax execute="inputNome" render="mensagemResultante" />
+		</h:commandButton>
+		<h2>
+			<h:outputText id="mensagemResultante"
+				value="#{usuario.boasVindas != null ? usuario.boasVindas :''}" />
+		</h2>
+	</h:form>
+</h:body>
+</html>

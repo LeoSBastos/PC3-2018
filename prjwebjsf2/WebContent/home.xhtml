@@ -1,0 +1,53 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+	<h2>Navegacao implicita</h2>
+	<hr />
+	<h:form>
+		<h3>Usando Managed Bean</h3>
+		<h:commandButton action="#{navegacaoController.moverParaPage1}"
+			value="Page1" />
+		<h3>Usando JSF</h3>
+		<h:commandButton action="page2" value="Page2" />
+	</h:form>
+	<br />
+	<h2>Navegacao condicional</h2>
+	<hr />
+	<h:form>
+		<h:commandLink action="#{navegacaoController.mostrarPage}"
+			value="Page1">
+			<f:param name="pageId" value="1" />
+		</h:commandLink>
+		<h:commandLink action="#{navegacaoController.mostrarPage}"
+			value="Page2">
+			<f:param name="pageId" value="2" />
+		</h:commandLink>
+		<h:commandLink action="#{navegacaoController.mostrarPage}"
+			value="Home">
+			<f:param name="pageId" value="3" />
+		</h:commandLink>
+	</h:form>
+	<br />
+	<h2>Navegacao por acao</h2>
+	<hr />
+	<h:form>
+		<h:commandLink action="#{navegacaoController.processarPage1}"
+			value="Page1" />
+		<h:commandLink action="#{navegacaoController.processarPage2}"
+			value="Page2" />
+	</h:form>
+	<br />
+	<h2>Forward vs Redirection</h2>
+	<hr />
+	<h:form>
+		<h3>Forward</h3>
+		<h:commandButton action="page1" value="Page1" />
+<h3>Redirect</h3>
+<h:commandButton action="page1?faces-redirect = true" value="Page1" />
+	</h:form>
+</h:body>
+</html>

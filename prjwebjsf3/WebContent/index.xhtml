@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Atividade 5 da aula 12</title>
+	<h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+<h:body>
+	<h2>Uso do DataTable</h2>
+	<h:form>
+		<h:dataTable value="#{dadoUsuario.empregados}" var="empregado"
+			styleClass="empregadoTable" headerClass="empregadoTableHeader"
+			rowClasses="empregadoTableOddRow,empregadoTableEvenRow">
+			<h:column>
+				<f:facet name="header">Nome</f:facet> #{empregado.nome}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Departamento</f:facet>#{empregado.departamento}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Idade</f:facet>#{empregado.idade}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Salário</f:facet>#{empregado.salario}
+			</h:column>
+		</h:dataTable>
+		<h3>Adicionando empregados</h3>
+		<hr />
+		<table>
+			<tr>
+				<td>Nome :</td>
+				<td><h:inputText size="10" value="#{dadoUsuario.nome}" /></td>
+			</tr>
+			<tr>
+				<td>Departamento :</td>
+				<td><h:inputText size="20" value="#{dadoUsuario.departamento}" /></td>
+			</tr>
+			<tr>
+				<td>Idade :</td>
+				<td><h:inputText size="5" value="#{dadoUsuario.idade}" /></td>
+			</tr>
+			<tr>
+				<td>Salary :</td>
+				<td><h:inputText size="5" value="#{dadoUsuario.salario}" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><h:commandButton value="Inserir"
+						action="#{dadoUsuario.addEmpregado}" /></td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>
